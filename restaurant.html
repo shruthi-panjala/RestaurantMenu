@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html ng-app="myApp" lang="en">
+<head>
+<meta charset="ISO-8859-1">
+<title>Olive Gardens</title>
+<meta name="info" content="Introduction to angularJS">
+<meta name="viewport" content="width=device-width, intial-scale">
+<link rel="stylesheet" href="bootstrap.css">
+<!-- <script src="jquery-3.1.0.js"></script> -->
+<script src="jquery-3.1.0.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	
+<!-- <script src="bootstrap.min.js"></script>	
+<script src="angular.min.js"></script> -->	
+    <style>
+        table,td{
+          border-collapse:collapse;   
+        color: darkblue;
+             height:50px;
+text-align: left;   
+       border: none;
+            
+         div {
+  width: 900px;
+  height: 400px;
+             border: 1px solid black; margin-bottom: 1em;
+  background-image: url('C:/Users/Shruthi_Panjala/Desktop/softy/images/biryani.jpg');
+  background-repeat: no-repeat;
+}
+            
+        }
+        .panel.panel-default{
+            background: rgba(255,255,255,0);
+            
+            
+        }
+        .panel.panel-success{
+            background: rgba(255,255,255,0);
+            
+            
+        }
+        #main{
+            background-image: url('C:/Users/Shruthi_Panjala/Desktop/softy/images/biryani2.jpeg');
+            background-repeat: no-repeat;
+            background-size:cover;
+
+        }
+         #starters{
+            background-image: url('C:/Users/Shruthi_Panjala/Desktop/softy/images/chick.jpg');
+            background-repeat: no-repeat;
+            background-size:cover;
+
+        }
+         #deserts{
+            background-image: url('C:/Users/Shruthi_Panjala/Desktop/softy/images/des4.jpg');
+            background-repeat: no-repeat;
+            background-size:cover;
+
+        }
+        
+        body {
+            background-color:silver;
+            font-family: sans-serif;
+            font-size: 200%;
+            
+  min-height: 2000px;
+  padding-top: 70px;
+        }
+        .well{background: transparent;
+            background-image: url('C:/Users/Shruthi_Panjala/Desktop/softy/images/fire.jpg');
+            
+}
+        /* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+#search{
+ display:block;
+    text-align:center;
+
+
+}
+
+    </style>
+</head>
+
+<body style="" ng-controller="myController" ng-model="brand">
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:black;">
+  <div class="container-fluid">
+    <div class="navbar-header" >
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="brand1.png">
+        </a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Offers</a></li> 
+        <li><a href="#">Login</a></li>
+       </ul>
+      <form class="navbar-form">
+	  
+        <div class="form-group" id="search">
+	
+          <input type="text" ng-model="search" class="form-control" style="width: 1000px;" placeholder="Search">
+       
+        <button type="submit" class="btn btn-default">submit</button>
+     
+   
+  </div> </form>
+</nav>
+    <div class="well" style="background-color:silver;"><h3 align="center"><i><span style="color:black;" align="center">A child DIES every 5 seconds as a result of hunger</span></i></h3>
+    <span style="color:darkblue;" ><h2 align="center">Don't Waste Food..!</h3></span>
+    </div>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="C:/Users/Shruthi_Panjala/Desktop/softy/images/start1.jpg" alt="Starters">
+        <div class="carousel-caption">
+        <h3><button class="btn btn-primary" ng-click=starters()>Awesome Starters</button></h3>
+        <p>it's Yummy Dude.....!</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="C:/Users/Shruthi_Panjala/Desktop/softy/images/biryani3.Jpg" alt="Biryani">
+    </div>
+
+    <div class="item">
+      <img src="C:/Users/Shruthi_Panjala/Desktop/softy/images/des4.jpg" alt="Flower">
+    </div>
+
+    <div class="item">
+      <img src="C:/Users/Shruthi_Panjala/Desktop/softy/images/pasta1.jpg" alt="Flower">
+      
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+    <div class="container">
+    <div class="panel panel-default" id="main" >
+       
+        <div class="panel-heading">
+         <div class="panel-title">
+             <h2>Main Course:</h2></div></div>
+       <div class="panel-body" >
+ 
+           <table align="center" class="table">
+       <th>Item</th>
+       <th>price</th>
+       <th>Click</th>
+      
+        
+           <tr ng-repeat="brand in items|filter:search">
+               <td><label for="item">{{brand.name}}</label></td> <td><label for="cost">{{brand.price}}</label> </td>
+       <td><button class="btn btn-success" name="add" id="add" ng-click="additem(brand)">+</button></td>
+           </tr>
+       
+        </table>
+        </div></div>
+        
+        <!--<div class="container">-->
+    <div class="panel panel-default" id="starters">
+       
+        <div class="panel-heading">
+         <div class="panel-title">
+        <h2>Starters:</h2></div></div>
+       <div class="panel-body">
+  
+           <table align="center" class="table table-borderless">
+       <th>Item</th>
+       <th>price</th>
+       <th>Click</th>
+      
+        
+           <tr ng-repeat="brand in starters |filter:search">
+               <td><label for="item">{{brand.name}}</label></td> <td><label for="cost">{{brand.price}}</label> </td>
+       <td><button class="btn btn-success" name="add" id="add" ng-click="additem(brand)">+</button></td>
+           </tr>
+       
+        </table>
+        </div></div>
+            <!--<div class="container">-->
+    <div class="panel panel-default" id="deserts">
+       
+        <div class="panel-heading">
+         <div class="panel-title">
+        <h2>Beverages:</h2></div></div>
+       <div class="panel-body">
+  
+           <table align="center" class="table border-less">
+       <th>Item</th>
+       <th>price</th>
+       <th>Click</th>
+      
+        
+           <tr ng-repeat="brand in Deserts| filter:search">
+               <td><label for="item">{{brand.name}}</label></td> <td><label for="cost">{{brand.price}}</label> </td>
+       <td><button class="btn btn-success" name="add" id="add" ng-click="additem(brand)">+</button></td>
+           </tr>
+       
+        </table>
+        </div></div>
+            
+       <div class="panel panel-success" id="order">
+       
+        <div class="panel-heading">
+         <div class="panel-title">
+        <h2>Your Order</h2></div></div> 
+            <div class="panel-body">
+                
+                     <!--*********************  Final items to get billed  **************************-->
+                
+        <table align="center" class="table" >  
+             
+       <th>Item</th>
+       <th>price</th>
+       <th>quantity</th>
+            <th>total_cost</th>
+    <tr ng-repeat="final in billItems">
+       <td> <label>{{final.name}}</label></td><td><label>{{final.price}}</label></td>
+        <td><label>{{final.quantity}}</label></td>
+        <td><label>{{final.eachcost}}</label></td>
+        <td><button class="btn btn-primary" name="remove" id="remove" ng-click="remove(final,$index)">-</button></td>
+           
+            </tr>
+                </table>
+				
+                
+        <!--<label>Recently added:{{final.item}}</label>
+                <br><label>cost of item:{{c1}}</label><br>-->
+                
+                <h3 align="right">Total Amount:{{finalcost}} <!--each item cost:{{tcost}}-->
+                </h3>
+            <br>
+                <h3 align="right">TTotal+Tax(14.5%):{{bill}}</h3>
+                <h3 align="center"> Credits:ShruthiPanda.com
+        <br>Please subscribe...
+        <br>Free home delivery available..!!!
+                
+        </h3>
+            
+                
+               <button class="btn btn-primary" name="placeorder" id="placeorder" ng-click="placeorder()">Place Order</button>
+               
+                
+           </div>
+    </div
+	 <div class="row">
+    <div class="col-sm-4">
+	Total Amount:{{finalcost}} <!--each item cost:{{tcost}}-->
+	</div>
+	
+	    <div class="col-sm-4">
+
+       TTotal+Tax(14.5%):{{bill}}       
+				</div>
+				</div>
+				
+        </div>
+         
+            
+    <script>
+     var myApp=angular.module("myApp",[]);
+        var price=0;
+        var count=0;
+         myApp.controller("myController",function($scope){
+             $scope.items=[
+                 {"name":"Chicken Dum Biryani","price":"170.00",quantity:0,eachcost:0},
+                 {"name":"Special Boneless Chicken Biryani","price":"195.00",quantity:0,eachcost:0},
+                 {"name":"Mutton Biryani","price":"212.00",quantity:0,eachcost:0},
+                 {"name":"Mughlai Chicken Biryani","price":"187.00",quantity:0,eachcost:0},
+                 {"name":"Chicken Dum Family Pack Biryani","price":"330.00",quantity:0,eachcost:0},
+                 {"name":"Mixed Biryani","price":"220.00",quantity:0,eachcost:0},
+                 {"name":"Gobhi Rice","price":"70.00",quantity:0,eachcost:0},
+             ];
+             $scope.starters=[
+                  {"name":"Veg Manchuria","price":"120.00",quantity:0,eachcost:0},
+                  {"name":"Gobi Manchuria","price":"120.00",quantity:0,eachcost:0},
+                  {"name":"Spring Rolls","price":"130.00",quantity:0,eachcost:0},
+                  {"name":"Veg Bullets","price":"140.00",quantity:0,eachcost:0},
+                  {"name":"achari Paneer Tikka","price":"150.00",quantity:0,eachcost:0},
+                  {"name":"Chicken Tikka","price":"180.00",quantity:0,eachcost:0},
+                  {"name":"Sheek Kabab","price":"180.00",quantity:0,eachcost:0},
+                  {"name":"Chicken 65","price":"170.00",quantity:0,eachcost:0},
+                  {"name":"Fish Fry","price":"200.00",quantity:0,eachcost:0},
+                  {"name":"Tandoori Chicken","price":"120.00",quantity:0,eachcost:0},
+                 
+             ];
+              $scope.Deserts=[
+                  {"name":"Butter Milk","price":"32.00",quantity:0,eachcost:0},
+                  {"name":"Ice Cream","price":"100.00",quantity:0,eachcost:0},
+                  {"name":"Salted Lassi","price":"48.00",quantity:0,eachcost:0},
+                  {"name":"Lassi","price":"40.00",quantity:0,eachcost:0},
+               
+             ];
+             var previous=0;
+             $scope.billItems=[];
+            var count=0;
+ var finalcost=0;
+ var tcost=0;
+              var tax= 0.145;  
+            var bill=0;
+          $scope.additem=function(item){
+              
+              $scope.i1=item.name;
+              $scope.c1=item.price;
+               
+
+              finalcost=finalcost+parseFloat(item.price);
+$scope.finalcost=finalcost;
+
+              tcost=(parseFloat(finalcost)+parseFloat(item.price))*tax;
+$scope.bill=parseFloat(finalcost)+parseFloat(item.price)+tcost;
+              if(item.quantity===0)
+{              item.quantity++;
+ item.eachcost=item.quantity*parseFloat(item.price);
+ $scope.tcost=item.eachcost; 
+}
+
+              var list = $scope.billItems;
+             
+var add =true;
+var i;
+    for (i = 0; i < list.length; i++) {
+        if (angular.equals(list[i].name, item.name)) {
+            list[i].quantity = eval(list[i].quantity) + eval(1);
+list[i].eachcost = item.price * list[i].quantity;
+add = false;
+        }
+    
+}
+              
+if(add)
+{
+    
+$scope.billItems.push(item);
+}
+           
+        }
+          var updated=0;
+          var index=0;
+          $scope.remove=function(item,index)
+          {
+              item.quantity--;
+              if(item.quantity>0)
+              {
+              
+              item.eachcost=item.quantity*parseFloat(item.price);
+            
+              finalcost=parseFloat(finalcost)-parseFloat(item.price);
+                  tcost=finalcost*tax;
+                  $scope.bill=finalcost+tax;
+              $scope.finalcost=finalcost;
+               //$scope.billItems.splice(index, 1);
+               
+              }
+else if(item.quantity===0){
+               updated =finalcost;
+               finalcost=finalcost-parseFloat(item.price);
+    tcost=finalcost*tax;
+                  $scope.bill=finalcost+tax;
+     $scope.finalcost=finalcost;
+               $scope.billItems.splice(index, 1);
+   
+}
+              else
+                  alert("no item");
+             
+          }
+     
+          
+          
+         });
+        /**/
+//              var name=item;
+//              $scope.i1=item;
+//              $scope.c1=cost;
+//            previous=parseFloat(previous)+parseFloat(cost);
+//              bill=previous+previous*tax;
+//              $scope.bill=bill;
+//              $scope.total=previous;
+//              //$scope.billItems.push({name:item,price:cost});
+    </script>
+
+
+    </body>
+</html>

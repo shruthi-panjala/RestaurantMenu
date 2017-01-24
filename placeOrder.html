@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="ISO-8859-1">
+<title>Olive Gardens</title>
+<meta name="info" content="Introduction to angularJS">
+<meta name="viewport" content="width=device-width, intial-scale">
+<link rel="stylesheet" href="bootstrap.css">
+<script src="jquery-3.1.0.js"></script>	
+<script src="bootstrap.min.js"></script>	
+<script src="angular.min.js"></script>	
+    <style>
+        table,td{
+          border-collapse:collapse;   
+        color: black;
+             height:50px;
+text-align: left;   
+            border: none;}
+    </style>
+    </head>
+<body ng-controller="myController1" ng-model="bill">
+<div class="panel panel-success" id="order">
+    <div class="panel-heading">
+         <div class="panel-title">
+        <h2>Your Order</h2></div></div> 
+            <div class="panel-body">
+                <table align="center" class="table" >  
+             
+       <th>Item</th>
+       <th>price</th>
+       <th>quantity</th>
+            <th>total_cost</th>
+    <tr ng-repeat="bill in billItems">
+       <td> <label>{{bill.name}}</label></td><td><label>{{bill.price}}</label></td>
+        <td><label>{{bill.quantity}}</label></td>
+        <td><label>{{bill.eachcost}}</label></td>
+        <!--<td><button class="btn btn-primary" name="remove" id="remove" ng-click="remove(final,$index)">-</button></td>-->
+           
+            </tr>
+                </table>
+                
+        <!--<label>Recently added:{{final.item}}</label>
+                <br><label>cost of item:{{c1}}</label><br>-->
+                
+                <h3 align="right">Total Amount:{{finalcost}} <!--each item cost:{{tcost}}-->
+                </h3>
+            <br>
+                <h3 align="right">TTotal+Tax(14.5%):{{bill}}</h3>
+                <h3 align="center"> Credits:ShruthiPanda.com
+        <br>Please subscribe...
+        <br>Free home delivery available..!!!
+                
+        </h3>
+            
+                
+              <!-- <button class="btn btn-primary" name="placeorder" id="placeorder" ng-click="placeorder()">Place Order</button>-->
+               
+                
+           </div>
+    </div>
+        
+    
+</body>
+</html>
